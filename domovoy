@@ -1,0 +1,9 @@
+cur_date=`date +"%y_%m_%d_%H_%M_%S_"`
+for i in $(locate SPOON); 
+	do if ! [[ $i =~ /home/itamar/spoons/ ]]
+		then
+		b=$cur_date${i////_}; 
+		b="~/spoons/"$b; 
+		mmv $i $b;
+	fi
+done
